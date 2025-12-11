@@ -5,6 +5,9 @@ const { authenticateJWT } = require('../middlewares/auth.middleware');
 
 apikeys.use(authenticateJWT);
 
+
+
+
 apikeys.post('/', apikeyC.generateKey);
 apikeys.post('/rotate/:id', apikeyC.rotateKey);
 apikeys.post('/revoke/:id', apikeyC.revokeKey);

@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
+
+
 const connectDB = async () => {
+
     mongoose.connection.on('connected', () => {
         console.log('MongoDB connected');
     });
+
 
     try {
         await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/multitenant');
@@ -12,5 +16,10 @@ const connectDB = async () => {
         process.exit(1);
     }
 };
+
+
+
+
+
 
 module.exports = connectDB;
