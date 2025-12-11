@@ -105,6 +105,55 @@ Authenticate and receive a JWT.
     }
     ```
 
+### User Management
+
+**Headers**: Requires `Authorization: Bearer <token>`
+
+#### List Users
+Retrieve all users in the organization.
+
+- **URL**: `/api/users`
+- **Method**: `GET`
+- **Query Params**: None
+
+#### Get User
+Retrieve a specific user by ID.
+
+- **URL**: `/api/users/:id`
+- **Method**: `GET`
+
+#### Create User
+Create a new user in the organization (Admin only).
+
+- **URL**: `/api/users`
+- **Method**: `POST`
+- **Body**:
+    ```json
+    {
+      "email": "newuser@example.com",
+      "password": "password123",
+      "role": "user"
+    }
+    ```
+
+#### Update User
+Update a user's details (Admin/Manager).
+
+- **URL**: `/api/users/:id`
+- **Method**: `PUT`
+- **Body**:
+    ```json
+    {
+      "role": "manager"
+    }
+    ```
+
+#### Delete User
+Remove a user from the organization (Admin only).
+
+- **URL**: `/api/users/:id`
+- **Method**: `DELETE`
+
 ### API Keys
 
 **Headers**: Requires `Authorization: Bearer <token>`

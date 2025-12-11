@@ -1,5 +1,5 @@
-const express8 = require('express');
-const apikeys = express8.Router();
+const express = require('express');
+const apikeys = express.Router();
 const apikeyC = require('../controllers/apikey.controller');
 const { authenticateJWT } = require('../middlewares/auth.middleware');
 
